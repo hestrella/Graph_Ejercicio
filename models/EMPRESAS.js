@@ -15,4 +15,5 @@ const empresaSchema = new Schema ({
 });
 
 
+
 module.exports =moongoose.model('empresa',empresaSchema); 

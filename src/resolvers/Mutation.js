@@ -11,6 +11,7 @@ const createEmpresa = async (root,{data})=>{
     return miEmpresa;
 }
 
+
 const createUsuario = async (root,{data}) =>{
     let newUsuario = new Usuario({
         ...data

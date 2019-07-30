@@ -10,6 +10,7 @@ type Query{
 
 }
 
+
 type Mutation{
     createEmpresa(data:inputEmpresa!):Empresa,
     createUsuario(data:inputUsuario!):Usuario

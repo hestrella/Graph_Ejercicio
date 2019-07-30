@@ -15,6 +15,7 @@ moongoose.connect(process.env.cUrlMongoose,(errr)=>{
     }
 })
 
+
 const {getAllEmpresa,getUsuario}= require('./resolvers/Querys');
 const {createEmpresa,createUsuario}= require('./resolvers/Mutation');
 

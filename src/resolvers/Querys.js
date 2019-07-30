@@ -6,6 +6,7 @@ const getAllEmpresa= async (root,args)=>{
 
 }
 
+
 const getUsuario = async (root,data) => {
     let fintUsu = await Usuario.findOne({cNombre:data.cNombre},(ERR,RES) => {
         return RES;
