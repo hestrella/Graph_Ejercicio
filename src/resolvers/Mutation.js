@@ -32,12 +32,12 @@ const login = async (root, {data}) => {
 }
 
 const addPhoto = async (root,args) => {
-    console.log(args);
+   
         if (args.photo)
         {
             const { createReadStream }= await args.photo;
             const stream= createReadStream();
-            console.log('STREAM===>>',stream);
+            
             const url= await storage({stream});
             console.log(url);
         }
