@@ -6,6 +6,12 @@ const getAllEmpresa= async (root,args)=>{
 
 }
 
+const getEmpresabyId= async (root,args)=>{
+    let lstEmpresa = await Empresa.findById(args.id).populate('user');
+    return lstEmpresa;
+
+}
+
 
 const getUsuario = async (root,data) => {
     let fintUsu = await Usuario.findOne({cNombre:data.cNombre},(ERR,RES) => {
@@ -15,8 +21,9 @@ const getUsuario = async (root,data) => {
     return fintUsu;
 }
 
-
 module.exports={  
     getAllEmpresa,
-    getUsuario
+    getUsuario,
+    getEmpresabyId,
+    
 }

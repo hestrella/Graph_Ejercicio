@@ -1,19 +1,19 @@
-
+directive @auth on FIELD_DEFINITION | FIELD
 
 scalar Datetime
-
+scalar Upload
 type Query{
-    getAllEmpresa(cNombreEmpresa:String!):Empresa,
-    getUsuario(cNombre:String!):Usuario,
-    
-
-
+    getAllEmpresa(cNombreEmpresa:String!):Empresa  @auth
+    getUsuario(cNombre:String!):Usuario @auth
+    getEmpresabyId(id:String!):Empresa @auth
 }
 
 
 type Mutation{
-    createEmpresa(data:inputEmpresa!):Empresa,
+    createEmpresa(data:inputEmpresa!):Empresa
     createUsuario(data:inputUsuario!):Usuario
+    login(data:inputLogin!):Token
+    addPhoto(photo:Upload):String
 
 }
 
@@ -61,4 +61,17 @@ type Usuario{
     img:String,
     dtFechaCreacion: Datetime,
     dtFechaModificacion: Datetime  
+}
+
+
+type Token {
+    token: String,
+    messagge: String
+
+}
+
+input inputLogin{
+    cNombre: String!,
+    cContrasenia: String!
+
 }
